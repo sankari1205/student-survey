@@ -20,6 +20,10 @@ lerna-debug.log*
 
 # Env files
 .env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
 # Database
 student_survey.db
