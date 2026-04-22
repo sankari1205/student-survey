@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hw3-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hw3-backend
+  template:
+    metadata:
+      labels:
+        app: hw3-backend
+    spec:
+      containers:
+        - name: backend
+          image: mikasa12/hw3-backend:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8000
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: hw3-db-secret
+                  key: DATABASE_URL

@@ -1,0 +1,26 @@
+frontend:
+  name: hw3-frontend
+  replicaCount: 1
+  image:
+    repository: mikasa12/hw3-frontend
+    tag: latest
+    pullPolicy: Always
+  service:
+    type: NodePort
+    port: 80
+    targetPort: 80
+    nodePort: 30081
+
+backend:
+  name: hw3-backend
+  replicaCount: 1
+  image:
+    repository: mikasa12/hw3-backend
+    tag: latest
+    pullPolicy: Always
+  service:
+    type: ClusterIP
+    port: 8000
+    targetPort: 8000
+  env:
+    DATABASE_URL: "PASTE_YOUR_RDS_DATABASE_URL_HERE"

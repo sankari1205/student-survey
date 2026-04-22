@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hw3-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hw3-frontend
+  template:
+    metadata:
+      labels:
+        app: hw3-frontend
+    spec:
+      containers:
+        - name: frontend
+          image: mikasa12/hw3-frontend:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
