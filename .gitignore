@@ -46,3 +46,5 @@ student_survey.db
 
 # Word temp files
 ~$*.docx
+*.mp4
+*.docx
