@@ -43,3 +43,6 @@ student_survey.db
 
 # Kubernetes
 *.yaml.bak
+
+# Word temp files
+~$*.docx
